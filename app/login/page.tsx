@@ -126,9 +126,11 @@ export default function Login({
           Forgot Password
         </SubmitButton>
         {searchParams?.message && (
-          <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
-            {searchParams.message}
-          </p>
+          <div role="alert">
+            <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
+              {searchParams.message}
+            </p>
+          </div>
         )}
       </form>
     </div>
