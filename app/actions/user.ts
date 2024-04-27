@@ -7,9 +7,10 @@ export async function signOut() {
   return redirect("/");
 }
 export async function resetPassword(data: FormData) {
+  const origin = headers().get("origin");
   const email = data.get("email") as string;
   const { error } = await createClient().auth.resetPasswordForEmail(email, {
-    redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}auth/confirm`,
+    redirectTo: `${origin}auth/confirm`,
   });
   if (error) {
     return redirect(`/login?message=${error.message}`);
