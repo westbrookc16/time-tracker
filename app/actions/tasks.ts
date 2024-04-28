@@ -71,6 +71,7 @@ export async function startTask(data: FormData) {
   if (error) {
     throw error;
   }
+  console.log(`page=${data.get("page")}`);
   if ((data.get("page") as string) === "projects")
     return redirect(`/projects/${project_id}`);
   else return redirect(`/projects/tasks/${task_id}`);

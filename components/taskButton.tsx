@@ -10,7 +10,7 @@ export default async function TaskButton({
 }) {
   return (
     <form>
-      <input type="hidden" id="page" value={page} />
+      <input type="hidden" id="page" value={page} name="page" />
       <input type="hidden" name="task_id" value={task.id} />
       <input type="hidden" name="project_id" value={task.project_id ?? ""} />
       {task.status === "In Progress" ? (
